@@ -1,0 +1,37 @@
+/* Estilos para el contenedor principal del encabezado */
+header {
+  background-color: #001f3f; /* Azul oscuro, casi negro, para el fondo */
+  color: #7fdbff; /* Azul claro para el texto, que contrasta bien */
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Courier New', Courier, monospace; /* Fuente retro estilo "máquina de escribir" */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil para un efecto de profundidad */
+}
+
+/* Estilos para el título H1 */
+h1 {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em; /* Espaciado entre letras para un toque estilizado */
+  transition: color 0.3s ease-in-out; /* Transición para un efecto de hover */
+}
+
+/* Estilos para el enlace dentro del H1 */
+h1 a {
+  color: inherit; /* Hereda el color del texto del H1 */
+  text-decoration: none; /* Elimina la línea debajo del enlace */
+}
+
+/* Estilos para el enlace cuando se visita (ya no se pondrá morado) */
+h1 a:visited {
+  color: inherit;
+}
+
+/* Efecto al pasar el mouse por encima del enlace */
+h1 a:hover {
+  color: #fff; /* El color del texto cambia a blanco */
+}

@@ -1,0 +1,24 @@
+footer {
+    background-color: #001f3f; /* Mismo color de fondo que el encabezado */
+    color: #7fdbff; /* Mismo color de texto que el encabezado */
+    padding: 1rem;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box; /* 👈 Añade esta línea para solucionar el problema del ancho */
+
+}
+  
+a {
+    color: #7fdbff;
+    text-decoration: none;
+    margin-top: 0.5rem;
+    display: block;
+}
+  
+a:hover {
+    text-decoration: underline;
+}

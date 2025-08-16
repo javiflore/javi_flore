@@ -1,0 +1,19 @@
+.legal-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+    
+h1 {
+    text-align: center;
+    color: #001f3f;
+}
+  
+h2 {
+    color: #001f3f;
+    border-bottom: 2px solid #7fdbff;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+}
