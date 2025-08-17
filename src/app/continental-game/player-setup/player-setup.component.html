@@ -1,0 +1,16 @@
+<div class="setup-container">
+    <h2>Seleccionar jugadores</h2>
+    <div class="input-group">
+      <label for="num-players">Número de jugadores:</label>
+      <input type="number" id="num-players" [(ngModel)]="numPlayers" (change)="onNumPlayersChange()" min="2" max="7">
+    </div>
+  
+    @for (name of playerNames; track $index) {
+      <div class="input-group">
+        <label for="player-{{ $index + 1 }}">Nombre del Jugador {{ $index + 1 }}:</label>
+        <input type="text" id="player-{{ $index + 1 }}" [(ngModel)]="playerNames[$index]">
+      </div>
+    }
+  
+    <button [disabled]="!areAllNamesFilled" (click)="startGame()">Siguiente</button>
+</div>

@@ -1,0 +1,67 @@
+<div class="game-container">
+    <app-player-setup *ngIf="!showGame" (playersReady)="onPlayersReady($event)"></app-player-setup>
+  
+    <div *ngIf="showGame">
+  
+      <table class="rounds-table">
+        <thead>
+          <tr>
+            <th>RONDAS</th>
+            <th>Cartas Necesarias</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (round of rounds; track $index) {
+            <tr>
+              <td>{{ round.rule }}</td>
+              <td>{{ round.cards }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+  
+      <table class="scores-table">
+        <thead>
+          <tr>
+            <th>Puntuación</th>
+            @for (player of playerNames; track $index) {
+              <th>{{ player }}</th>
+            }
+          </tr>
+        </thead>
+        <tbody>
+          @for (round of rounds; track $index; let roundIndex = $index) {
+            <tr>
+              <td>Ronda {{ roundIndex + 1 }}</td>
+              @for (player of playerNames; track $index; let playerIndex = $index) {
+                <td>
+                  <input 
+                    type="number" 
+                    [(ngModel)]="scores[roundIndex][playerIndex]" 
+                    (ngModelChange)="calculateTotal(playerIndex)">
+                </td>
+              }
+            </tr>
+          }
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Total</td>
+            @for (score of totalScores; track $index) {
+              <td>{{ score }}</td>
+            }
+          </tr>
+        </tfoot>
+      </table>
+  
+      <div class="ranking-container">
+        <h3>Ranking</h3>
+        <ol>
+          @for (player of ranking; track $index) {
+            <li>{{ player.name }} - {{ player.score }} puntos</li>
+          }
+        </ol>
+      </div>
+  
+    </div>
+  </div>
